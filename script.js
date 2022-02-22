@@ -29,14 +29,15 @@ $.each(products, function(i, value) {
   var product = $("<div></div>");
   product.addClass("product");
   product.append("<img src='" + value.image + "'/>");
+
   product.append("<div> Name: " + value.name + "</div>");
   product.append("<div> Price: " + value.price + "</div>");
-  
+
   $(product).attr("color", value.color);
   $(product).attr("name", value.name);
   $(product).attr("price", value.price);
   $(product).attr("img", value.image);
-  
+
   $("body").append(product);
 });
 
@@ -50,14 +51,15 @@ $(".product").hover(
   }
 );
 
+
 var popUp = $("<div></div>");
 popUp.addClass("popUp");
 popUp.append("<img class='imgDiv'></img>");
 popUp.append("<div class='nameDiv'></div>");
 popUp.append("<div class='priceDiv'></div>");
-
 $("body").append(popUp);
 $(".popUp").hide();
+
 
 $(".product").click(products, function(i, value) {
   $(".popUp").show();
