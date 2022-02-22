@@ -25,38 +25,18 @@ var products = [
   }
 ];
 
-
-// DO NOT EDIT THE ARRAY TO COMPLETE THE ASSIGNMENT
-
-// Create a div and give it a class of "popUp". Append that div to the body 
-
-// If I click on the popUp div, it should hide it
-
-// Create a div for each item in the array above
-
-// inside of each div, the prodcut Name and Price should be written as "Name: value" and "Price: $#.##";
-
-// inside of each div, the product's image should be on top of the text
-
-// when hovering over a product, its border color should change to the "color" of that product. Once you hover off, it should return to black
-
-// When Clicking on a product, it should display the popUp Menu over all the content
-
-// When clicking on the paticular product, that products image, name, and price should be displayed inside the popUp div just like it does in its own product div. No other products information shold be shown.
-
 $.each(products, function(i, value) {
   var product = $("<div></div>");
   product.addClass("product");
   product.append("<img src='" + value.image + "'/>");
-
   product.append("<div> Name: " + value.name + "</div>");
   product.append("<div> Price: $" + value.price + "</div>");
-
+  
   $(product).attr("color", value.color);
   $(product).attr("name", value.name);
   $(product).attr("price", value.price);
   $(product).attr("img", value.image);
-
+  
   $("body").append(product);
 });
 
@@ -70,15 +50,14 @@ $(".product").hover(
   }
 );
 
-
 var popUp = $("<div></div>");
 popUp.addClass("popUp");
 popUp.append("<img class='imgDiv'></img>");
 popUp.append("<div class='nameDiv'></div>");
 popUp.append("<div class='priceDiv'></div>");
+
 $("body").append(popUp);
 $(".popUp").hide();
-
 
 $(".product").click(products, function(i, value) {
   $(".popUp").show();
